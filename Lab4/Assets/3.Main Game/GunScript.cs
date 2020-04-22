@@ -15,11 +15,13 @@ public class GunScript : MonoBehaviour
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
     private LineRenderer laserLine;
     private float nextFire;
+    private AudioSource gunAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         laserLine = GetComponent<LineRenderer>();
+        gunAudio = GetComponent<AudioSource>();
         fpsCam = GetComponentInParent<Camera>();
     }
 
@@ -50,6 +52,8 @@ public class GunScript : MonoBehaviour
 
     private IEnumerator ShotEffect()
     {
+        gunAudio.Play();
+
         laserLine.enabled = true;
         yield return shotDuration;
         laserLine.enabled = false;
