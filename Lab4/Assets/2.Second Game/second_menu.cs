@@ -7,7 +7,7 @@ public class second_menu : MonoBehaviour
 {
     public void ReturnMain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         Time.timeScale = 1f;
     }
 }
